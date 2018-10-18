@@ -24,9 +24,9 @@ public class CreditCardTest {
         CreditCard card = new CreditCard();
         card.assignLimit(2000);
         
-        card.withdraw(1000)
+        card.withdraw(1000);
         
-        Assert.assertTrue(card.Saldo() == 1000)
+        Assert.assertTrue(card.Saldo() == 1000);
     }
     
 }
