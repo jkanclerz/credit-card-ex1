@@ -1,9 +1,22 @@
 package pl.jkan.creditcard;
 
+import java.util.UUID;
+
 class CreditCard {
     private boolean blocked = false;
     private double balance = 0;
     private double cardlimit = 0;
+    private String cardNumber;
+    private String number;
+
+    public CreditCard() {
+        this.cardNumber = UUID.randomUUID().toString();
+    }
+    public CreditCard(String cardNumber) {
+
+        this.cardNumber = cardNumber;
+    }
+
     public void assignLimit(double limit) {
         balance = limit;
         cardlimit = limit;
@@ -26,5 +39,9 @@ class CreditCard {
     
     public double getCountBalance() {
         return balance;
+    }
+
+    public String getNumber() {
+        return number;
     }
 }
