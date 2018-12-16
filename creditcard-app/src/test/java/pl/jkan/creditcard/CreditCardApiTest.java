@@ -42,7 +42,8 @@ public class CreditCardApiTest {
     }
 
     private void thereIsCCApi() {
-        this.api = new CreditCardApi();
+
+        this.api = new CreditCardApi(ccInMemoryStorage);
     }
 
 }
