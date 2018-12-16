@@ -1,12 +1,9 @@
 package pl.jkan.creditcard;
 
 class CreditCard {
-<<<<<<< HEAD
     private boolean blocked = false;
-=======
     private double balance = 0;
     private double cardlimit = 0;
->>>>>>> feature_withdraw
     public void assignLimit(double limit) {
         balance = limit;
         cardlimit = limit;

@@ -21,6 +21,7 @@ public class CreditCardTest {
         Assert.assertTrue(card.isBlocked());
     }
 
+    @Test
     public void withdrawedDecreaseAwolableFounds() {
         CreditCard card = new CreditCard();
         
@@ -29,5 +30,5 @@ public class CreditCardTest {
         
         Assert.assertTrue(card.getCountBalance() == 1000);
     }
-    
+
 }
