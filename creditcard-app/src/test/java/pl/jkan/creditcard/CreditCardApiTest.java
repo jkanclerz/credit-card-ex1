@@ -1,8 +1,11 @@
 package pl.jkan.creditcard;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-class CreditCardApiTest {
+public class CreditCardApiTest {
+    public static final String CARD_NUMBER = "1234-5678";
+
     private CreditCardApi api;
     private CreditCardInMemoryStorage ccInMemoryStorage;
 
@@ -11,13 +14,13 @@ class CreditCardApiTest {
         //GIVEN
         thereIsCCStorage();
         thereIsCCApi();
-        thereIsCreditCard("1234-5678", 5000);
+        thereIsCreditCard(CARD_NUMBER, 5000);
 
         //WHEN
-        api.withdraw("1234-5678", 2000);
+        api.withdraw(CARD_NUMBER, 2000);
 
         //THEN
-        ccWithNuberBalanceEquals("1234-5678", 3000);
+        ccWithNuberBalanceEquals(CARD_NUMBER, 3000);
     }
 
     private void thereIsCCStorage() {
@@ -25,7 +28,9 @@ class CreditCardApiTest {
     }
 
     private void ccWithNuberBalanceEquals(String number, double money) {
+        CreditCard cc = ccInMemoryStorage.find(number);
 
+        Assert.assertTrue(cc.getAccountBalance() == money);
     }
 
     private void thereIsCreditCard(String cardNumber, double money) {

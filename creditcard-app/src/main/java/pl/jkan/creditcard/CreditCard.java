@@ -7,7 +7,6 @@ class CreditCard {
     private double balance = 0;
     private double cardlimit = 0;
     private String cardNumber;
-    private String number;
 
     public CreditCard() {
         this.cardNumber = UUID.randomUUID().toString();
@@ -37,11 +36,11 @@ class CreditCard {
         balance = balance - money;
     }
     
-    public double getCountBalance() {
+    public double getAccountBalance() {
         return balance;
     }
 
     public String getNumber() {
-        return number;
+        return cardNumber;
     }
 }
